@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women Safety Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon link -->
+  <link rel="icon" href="{{ url_for('static', filename='user_pfp_bot.jpg') }}">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FDECEF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    .chat-container {
+      background: #F2FFF2;
+      width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .header {
+      background-color: #FF8FAB;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .messages {
+      padding: 20px;
+      height: 300px;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+    .input-area {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    .input-area input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .input-area button {
+      margin-left: 10px;
+      background-color: #FF8FAB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      background: #f9f9f9;
+    }
+    .buttons button {
+      width: 100px;
+      padding: 10px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+    }
+    .yes-btn { background-color: #FF4B5C; }
+    .no-btn { background-color: #4B7BFF; }
+    .contacts-panel {
+      background: #FFF5F8;
+      width: 250px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .contacts-panel h4 {
+      margin-top: 0;
+      color: #333;
+    }
+    .contacts-panel input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .contacts-panel form {
+  margin-bottom: 10px; /* Add space between forms */
+}
+
+.contacts-panel button {
+  margin-top: 5px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: #FF8FAB;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+    .contacts-panel ul {
+      padding-left: 20px;
+    }
+    .map-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="chat-container">
+    <div class="header">Women Safety Bot</div>
+    <div class="messages" id="chatbox">
+      <div><strong>Bot:</strong> Are you in danger?</div>
+    </div>
+    <div class="buttons">
+      <button class="yes-btn" onclick="sendResponse('Yes')">Yes</button>
+      <button class="no-btn" onclick="sendResponse('No')">No</button>
+    </div>
+    <div class="input-area">
+      <input type="text" id="message" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <div class="contacts-panel">
+    <h4>Emergency Contacts</h4>
+    <form method="POST" action="/add_contact">
+      <input type="text" name="number" placeholder="Add contact number" required>
+      <button type="submit">Add</button>
+    </form>
+    <form method="POST" action="/remove_contact">
+      <input type="text" name="number" placeholder="Remove contact number" required>
+      <button type="submit">Remove</button>
+    </form>
+    <button onclick="viewContacts()">View Saved Contacts</button>
+    <ul id="contactList"></ul>
+  </div>
+</div>
+
+<script>
+  function appendMessage(sender, text) {
+    const chatbox = document.getElementById('chatbox');
+    const messageDiv = document.createElement('div');
+    messageDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatbox.appendChild(messageDiv);
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('message');
+    const message = input.value;
+    if (!message.trim()) return;
+    appendMessage('You', message);
+    fetch('/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'message=' + encodeURIComponent(message)
+    })
+    .then(response => response.json())
+    .then(data => appendMessage('Bot', data.response));
+    input.value = '';
+  }
+
+  function sendResponse(response) {
+    appendMessage('You', response);
+    fetch('/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'message=' + encodeURIComponent(response)
+    })
+    .then(response => response.json())
+    .then(data => appendMessage('Bot', data.response));
+  }
+
+  function viewContacts() {
+    fetch('/contacts')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('contactList');
+        list.innerHTML = '';
+        if (data.contacts.length === 0) {
+          list.innerHTML = '<li>No contacts found.</li>';
+        } else {
+          data.contacts.forEach(number => {
+            const li = document.createElement('li');
+            li.textContent = number;
+            list.appendChild(li);
+          });
+        }
+      });
+  }
+</script>
+</body>
+</html>
+
+
+
