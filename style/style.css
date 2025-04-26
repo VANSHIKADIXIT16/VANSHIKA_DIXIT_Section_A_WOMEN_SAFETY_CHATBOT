@@ -1,0 +1,74 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #E0F6E3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.chat-container {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.messages {
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f7f7f7;
+}
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+}
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+.input-area button {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #fff;
+}
+.buttons button {
+    width: 100px;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+.yes-btn { background-color: red; }
+.no-btn { background-color: blue; }
