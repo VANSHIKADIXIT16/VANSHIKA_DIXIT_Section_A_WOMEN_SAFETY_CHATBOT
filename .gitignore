@@ -1,0 +1,4 @@
+.env
+firebase_config.json
+emergency_contacts.db
+__pycache__/
