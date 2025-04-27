@@ -1,1 +1,72 @@
 # WOMEN_SAFETY_CHATBOT
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-2.x-lightgrey?logo=flask)
+![Twilio](https://img.shields.io/badge/Twilio-SMS-red?logo=twilio)
+![Groq](https://img.shields.io/badge/Groq-LLM-blueviolet)
+![SpeechRecognition](https://img.shields.io/badge/Voice-Recognition-brightgreen)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
+> A web-based emergency chatbot to assist women in dangerous situations by sending automatic SMS alerts with real-time location tracking.
+
+---
+
+## 🌟 Features
+
+- 🆘 **Emergency SOS Trigger** through Web Chat or Voice Command ("Help")
+- 📍 **Live Location Tracking** and Google Maps Link
+- 📲 **SMS Alerts** using Twilio API to multiple contacts
+- 📋 **Manage Emergency Contacts** (Add / Remove Contacts)
+- 🎙️ **Voice Recognition** ("Help" keyword detection)
+- 🤖 **Chatbot Assistant** powered by Groq Llama3 LLM
+- 🔒 **Secure Information Handling** using Flask backend
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python 3.8+**
+- **Flask** (Backend)
+- **Twilio API** (SMS service)
+- **Groq API** (Chatbot AI)
+- **Geocoder + Geopy** (Location tracking)
+- **SQLite** (Emergency contacts database)
+- **SpeechRecognition** (Voice detection)
+
+---
+
+## 🚀 Local Setup Guide
+
+Follow these steps to run the project on your machine:
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/VANSHIKADIXIT16/WOMEN_SAFETY_CHATBOT.git
+   cd WOMEN_SAFETY_CHATBOT
+
+2. **Create a virtual environment (optional but recommended)**
+   ```bash
+   python -m venv venv
+source venv/bin/activate  # (Linux/Mac)
+venv\Scripts\activate      # (Windows)
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+
+4. **Set up environment variables**
+   ```bash
+   TWILIO_ACCOUNT_SID=your_twilio_account_sid
+   TWILIO_AUTH_TOKEN=your_twilio_auth_token
+   TWILIO_PHONE_NUMBER=your_twilio_phone_number
+   GROQ_API_KEY=your_groq_api_key
+
+5. **Run the Flask app**
+   ```bash
+   python app.py
+
+The app will be running at: http://127.0.0.1:5000/
+
+
+
+
