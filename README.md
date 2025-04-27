@@ -67,6 +67,26 @@ venv\Scripts\activate      # (Windows)
 
 The app will be running at: http://127.0.0.1:5000/
 
+## 📷 Screenshots
+
+### Chat Interface
+![Chat Interface](visual_representation/Chatbot_interface.jpg)
+
+### Contacts added
+![Contacts added](visual_representation/Contact_added.jpg)
+
+### Voice Detection
+![Voice Detection](visual_representation/voice_recognised.jpg)
+
+### SMS received on detecting voice
+![SMS received on detecting voice](visual_representation/sms_received.jpg)
+
+### SMS received on using Yes Button
+![SMS received on using Yes Button](visual_representation/sms_receiveed_on_yesButton.jpg)
+
+### General assistance
+![General assistance](visual_representation/general_assistance.jpg)
+
 
 
 
