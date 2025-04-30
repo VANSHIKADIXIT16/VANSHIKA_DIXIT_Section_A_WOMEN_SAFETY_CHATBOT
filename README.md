@@ -88,5 +88,11 @@ The app will be running at: http://127.0.0.1:5000/
 ![General assistance](visual_representation/general_assistance.jpg)
 
 
+### TEAM MEMBERS DETAILS
+
+**VANSHIKA DIXIT- (2401010010)**
+**SNEHA TELI GUPTA- (2401010020)**
+**AADYA DIWAN- (2401010040)**
+**YUKTI VADEHRA- (2401010120)**
 
 
