@@ -10,6 +10,24 @@
 > A web-based emergency chatbot to assist women in dangerous situations by sending automatic SMS alerts with real-time location tracking.
 
 ---
+### TEAM MEMBERS DETAILS
+
+**VANSHIKA DIXIT- (2401010010)**
+**SNEHA TELI GUPTA- (2401010020)**
+**AADYA DIWAN- (2401010040)**
+**YUKTI VADEHRA- (2401010120)**
+
+---
+### 🎥 Demo Video
+
+[Click here to watch the demo video](./Y1-2024-2025-G19.mp4)
+
+---
+### 🎥 Demo Video (SharePoint Link)
+
+[Click here to watch the demo video](https://krmangalameduin-my.sharepoint.com/:v:/g/personal/harsh_vardhan_krmangalam_edu_in/EeeTuDr7K7BPrQpQXLPqPqUBDd6i-HXWsoXJTmhEQjm4Gg?e=CjlyrU)
+
+---
 
 ## 🌟 Features
 
@@ -85,11 +103,5 @@ The app will be running at: http://127.0.0.1:5000/
 ![General assistance](visual_representation/general_assistance.jpg)
 
 
-### TEAM MEMBERS DETAILS
-
-**VANSHIKA DIXIT- (2401010010)**
-**SNEHA TELI GUPTA- (2401010020)**
-**AADYA DIWAN- (2401010040)**
-**YUKTI VADEHRA- (2401010120)**
 
 
