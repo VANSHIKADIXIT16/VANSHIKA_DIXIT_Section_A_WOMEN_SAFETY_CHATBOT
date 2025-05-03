@@ -20,7 +20,7 @@
 ---
 ### 🎥 Demo Video
 
-[Click here to watch the demo video](./Y1-2024-2025-G19.mp4)
+[Click here to watch the demo video](visual_representation/Y1-2024-2025-G19.mp4)
 
 ---
 ### 🎥 Demo Video (SharePoint Link)
