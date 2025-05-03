@@ -59,6 +59,36 @@
 
 ---
 
+## 📁 Project Structure
+
+```
+
+women-safety-webapp/
+│
+├── static/
+│   └── styles.css                    # CSS styles for the web app
+│
+├── templates/
+│   └── index.html                    # Main HTML file rendered by Flask
+│
+├── visual\_representation/
+│   └── Y1-2024-2025-G19.mp4          # Video representation of the project
+│
+├── .env.example                      # Template for environment variables
+├── .gitignore                        # Files and folders to be ignored by Git
+├── Mini\_project\_Report.pdf           # Final report of the project
+├── README.md                         # Project overview and usage instructions
+├── app.py                            # Main backend Flask application
+├── emergency\_contacts.db             # SQLite database storing emergency contacts
+├── firebase\_config\_example.json      # Sample Firebase config (do not upload real keys)
+└── requirement.txt                   # Python dependencies
+
+```
+
+
+
+---
+
 ## 🚀 Local Setup Guide
 
 Follow these steps to run the project on your machine:
