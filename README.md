@@ -29,6 +29,12 @@
 
 ---
 
+### View project report
+
+[Click here to view detailed project report](Mini_project_Report.pdf)
+
+---
+
 ## 🌟 Features
 
 - 🆘 **Emergency SOS Trigger** through Web Chat or Voice Command ("Help")
