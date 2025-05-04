@@ -35,6 +35,10 @@
 
 ---
 
+### View project presentation pdf
+
+[Click here to view detailed project report](women_safety_bot_presentation.pdf)
+
 ## 🌟 Features
 
 - 🆘 **Emergency SOS Trigger** through Web Chat or Voice Command ("Help")
