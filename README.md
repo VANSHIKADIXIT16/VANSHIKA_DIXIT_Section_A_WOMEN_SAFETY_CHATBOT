@@ -80,7 +80,6 @@ women-safety-webapp/
 ├── README.md                         # Project overview and usage instructions
 ├── app.py                            # Main backend Flask application
 ├── emergency\_contacts.db             # SQLite database storing emergency contacts
-├── firebase\_config\_example.json      # Sample Firebase config (do not upload real keys)
 └── requirement.txt                   # Python dependencies
 
 ```
