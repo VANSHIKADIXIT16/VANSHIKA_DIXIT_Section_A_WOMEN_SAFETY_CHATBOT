@@ -79,7 +79,8 @@ women-safety-webapp/
 ├── Mini\_project\_Report.pdf           # Final report of the project
 ├── README.md                         # Project overview and usage instructions
 ├── app.py                            # Main backend Flask application
-├── emergency\_contacts.db             # SQLite database storing emergency contacts
+├── emergency\_contacts.db           # SQLite database storing emergency contacts
+├── women safety bot presentation.pdf #Contains pdf of the ppt presented
 └── requirement.txt                   # Python dependencies
 
 ```
